@@ -1,4 +1,5 @@
 addons:
+  postgresql: 9.6
   code_climate:
     repo_token: b1adcbaf7a873747f50694297e154e1088f2aed1ceff5930e0398b67a3232532
 after_success:
@@ -12,7 +13,5 @@ rvm:
 script:
   - bundle exec rails db:migrate RAILS_ENV=test
   - bundle exec rspec
-services:
-  - postgresql
 after_script:
   - bundle exec rake coveralls:push

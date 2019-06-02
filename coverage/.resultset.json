@@ -1,7 +1,54 @@
 {
   "RSpec": {
     "coverage": {
+      "/root/blogette/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/root/blogette/app/models/application_record.rb": [
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/root/blogette/app/helpers/application_helper.rb": [
+        null,
+        null,
+        1,
+        null
+      ],
+      "/root/blogette/app/controllers/application_controller.rb": [
+        null,
+        null,
+        1,
+        null
+      ],
+      "/root/blogette/app/jobs/application_job.rb": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/root/blogette/app/models/author.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ]
     },
-    "timestamp": 1559409774
+    "timestamp": 1559495118
   }
 }

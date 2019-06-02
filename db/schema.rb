@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_02_155033) do
+ActiveRecord::Schema.define(version: 2019_06_02_172039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -25,6 +25,31 @@ ActiveRecord::Schema.define(version: 2019_06_02_155033) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_authors_on_user_id"
+  end
+
+  create_table "categories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.boolean "active"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "categories_posts", id: false, force: :cascade do |t|
+    t.uuid "category_id", null: false
+    t.uuid "post_id", null: false
+    t.index ["category_id"], name: "index_categories_posts_on_category_id"
+    t.index ["post_id"], name: "index_categories_posts_on_post_id"
+  end
+
+  create_table "posts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title"
+    t.text "subtitle"
+    t.uuid "author_id", null: false
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -45,4 +70,7 @@ ActiveRecord::Schema.define(version: 2019_06_02_155033) do
   end
 
   add_foreign_key "authors", "users"
+  add_foreign_key "categories_posts", "categories"
+  add_foreign_key "categories_posts", "posts"
+  add_foreign_key "posts", "authors"
 end

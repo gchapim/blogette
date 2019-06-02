@@ -35,4 +35,3 @@ module Blogette
     end
   end
 end
-

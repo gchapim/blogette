@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :post do
-    title { "MyString" }
-    subtitle { "MyText" }
+    title { 'MyString' }
+    subtitle { 'MyText' }
     author { nil }
-    content { "MyText" }
+    content { 'MyText' }
   end
 end

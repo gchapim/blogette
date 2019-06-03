@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="head">
+    <h1>Showing <%= @post.title %></h1>
+    <h5>Post</h5>
+  </div>
+
+  <div class="container">
+    <%= link_to 'Edit', edit_admin_post_path(@post), class: 'btn btn-secondary' %> <%= link_to 'Delete', admin_post_path(@post), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
+    <hr/>
+    <p><span><b>Title:</b> <%= @post.title %></span></p>
+    <p><span><b>Subtitle:</b> <%= @post.subtitle %></span></p>
+    <p><span><b>Author:</b> <%= link_to @post.author.name, admin_author_path(@post.author) %></span></p>
+    <p><span><b>Published at:</b> <%= @post.active? ? @post.published_at.to_s(:long) : 'Not published yet' %></span></p>
+    <p><span><b>Created at:</b> <%= @post.created_at.to_s :long %></span></p>
+    <p><span><b>Last updated at:</b> <%= @post.updated_at.to_s :long %></span></p>
+
+    <p><span><b>Categories</b></span></p>
+    <p><span><%= @post.categories.pluck(:name).join(', ') %></span></p>
+    <hr/>
+    <h2>Content</h2>
+    <%= @post.content %>
+  </div>
+</div>

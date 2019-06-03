@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/gchapim/blogette.svg?branch=master)](https://travis-ci.org/gchapim/blogette)
-[![Coverage Status](https://coveralls.io/repos/github/gchapim/blogette/badge.svg?branch=master)](https://coveralls.io/github/gchapim/blogette?branch=master)
+[![Test
+Coverage](https://api.codeclimate.com/v1/badges/70ef0432f776a7cfc03a/test_coverage)](https://codeclimate.com/github/gchapim/blogette/test_coverage)
 [![Code
 Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/gchapim/blogette)
 

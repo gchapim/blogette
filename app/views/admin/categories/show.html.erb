@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="head">
+    <h1>Showing <%= @category.name %></h1>
+    <h5>Category</h5>
+  </div>
+
+  <div class="container">
+    <%= link_to 'Edit', edit_admin_category_path(@category), class: 'btn btn-secondary' %> <%= link_to 'Delete', admin_category_path(@category), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
+    <hr/>
+    <p><span><b>Name:</b> <%= @category.name %></span></p>
+    <p><span><b>Description:</b> <%= @category.description %></span></p>
+    <p><span><b>Active?</b> <%= @category.active? ? 'Yes' : 'No' %></span></p>
+
+    <h3>Posts</h3>
+    <%= render '/admin/posts/table', posts: @category.posts %>
+  </div>
+</div>

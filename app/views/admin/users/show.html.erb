@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="head">
+    <h1>Showing <%= @user.email %></h1>
+    <h5>User</h5>
+  </div>
+
+  <div class="container">
+    <%= link_to 'Edit', edit_admin_user_path(@user), class: 'btn btn-secondary' %> <%= link_to 'Delete', admin_user_path(@user), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
+    <hr/>
+    <p><span><b>Email:</b> <%= @user.email %></span></p>
+    <p><span><b>Signed up:</b> <%= @user.created_at.to_s :long %></span></p>
+    <p><span><b>Author:</b> <%= link_to @user.author.name, admin_author_path(@user.author) if @user.author %></span></p>
+  </div>
+</div>

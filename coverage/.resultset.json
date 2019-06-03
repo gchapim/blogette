@@ -19,7 +19,7 @@
         1,
         1,
         null,
-        187,
+        192,
         null
       ],
       "/root/blogette/app/helpers/admin/posts_helper.rb": [
@@ -184,7 +184,7 @@
         1,
         1,
         null,
-        0,
+        1,
         null,
         null,
         1,
@@ -299,7 +299,7 @@
         1,
         1,
         null,
-        1,
+        3,
         null
       ],
       "/root/blogette/app/models/post.rb": [
@@ -328,6 +328,6 @@
         null
       ]
     },
-    "timestamp": 1559569540
+    "timestamp": 1559570495
   }
 }

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="head">
+    <h1>Showing <%= @author.name %></h1>
+    <h5>Author</h5>
+  </div>
+
+  <div class="container">
+    <%= link_to 'Edit', edit_admin_author_path(@author), class: 'btn btn-secondary' %> <%= link_to 'Delete', admin_author_path(@author), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
+    <hr/>
+    <p><span><b>Firstname:</b> <%= @author.firstname %></span></p>
+    <p><span><b>Lastname:</b> <%= @author.lastname %></span></p>
+    <p><span><b>User:</b> <%= link_to @author.user.email, admin_user_path(@author.user) %></span></p>
+
+    <p><span><b>Posts</b></span></p>
+    <%= render '/admin/posts/table', posts: @author.posts %>
+  </div>
+</div>

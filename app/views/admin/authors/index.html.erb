@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="head">
+    <h1>Authors</h1>
+    <%= link_to 'Create a Author', new_admin_author_path, class: 'btn btn-primary' %>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>User</th>
+        <th>Created</th>
+        <th>Last Updated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @authors.each do |author| %>
+        <tr>
+          <td><%= author.name %></td>
+          <td><%= link_to author.user.email, admin_user_path(author.user) %></td>
+          <td><%= author.created_at.to_s :long %></td>
+          <td><%= author.updated_at.to_s :long %></td>
+          <td><%= link_to 'Show', admin_author_path(author) %> | <%= link_to 'Edit', edit_admin_author_path(author) %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

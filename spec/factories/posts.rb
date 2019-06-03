@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :post do
     title { 'MyString' }
     subtitle { 'MyText' }
-    author { nil }
+    author
     content { 'MyText' }
   end
 end

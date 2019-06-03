@@ -5,7 +5,7 @@ FactoryBot.define do
     firstname { 'MyString' }
     lastname { 'MyString' }
     bio { 'MyText' }
-    user { nil }
+    user
     website { 'MyString' }
   end
 end

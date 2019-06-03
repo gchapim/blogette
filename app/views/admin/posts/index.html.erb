@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="head">
+    <h1>Posts</h1>
+    <%= link_to 'Create a Post', new_admin_post_path, class: 'btn btn-primary' %>
+  </div>
+  <%= render 'table', posts: @posts %>
+</div>

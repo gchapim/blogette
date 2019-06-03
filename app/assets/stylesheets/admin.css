@@ -1,0 +1,13 @@
+/*
+*= require_tree ./admin/
+*= require_self
+*= require actiontext
+*/
+
+.head {
+  padding: 20px;
+}
+
+trix-editor.form-control {
+  height: 500px !important;
+}

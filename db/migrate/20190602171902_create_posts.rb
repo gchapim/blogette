@@ -8,6 +8,10 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.references :author, null: false, foreign_key: true, index: true, type: :uuid
       t.text :content
 
+      t.string :slug
+      t.boolean :active
+
+      t.datetime :published_at
       t.timestamps
     end
   end
